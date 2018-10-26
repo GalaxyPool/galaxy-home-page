@@ -105,7 +105,7 @@
             <!-- Navigation Menu-->
             <ul class="navigation-menu">
               <li class="has-submenu">
-                <a href="./"><i class="dripicons-monitor"></i>Dashboard</a>
+                <a href="./"><i class="dripicons-graph-pie"></i>Dashboard</a>
               </li>
               <li class="has-submenu">
                 <a href="./?inc=wallets"><i class="dripicons-wallet"></i>Manage wallets</a>
@@ -114,13 +114,16 @@
                 <a href="./?inc=miner"><i class="dripicons-stack"></i>Your workers <span class="badge-primary badge-pill">0</span></a>
               </li>
               <li class="has-submenu">
-                <a href="./?inc=pool"><i class="dripicons-information"></i>Pool info</a>
-              </li>
-              <li class="has-submenu">
                 <a href="?inc=transactions"><i class="dripicons-list"></i><b>Transactions</b></a>
               </li>
               <li class="has-submenu">
                 <a href="?inc=stake"><i class="dripicons-hourglass"></i><b>Stake Pool</b></a>
+              </li>
+              <li class="has-submenu">
+                <a href="./?inc=vps"><i class="dripicons-device-desktop"></i>Buy VPS</a>
+              </li>
+              <li class="has-submenu">
+                <a href="./?inc=pool"><i class="dripicons-information"></i>Pool info</a>
               </li>
               <!-- Telegram
               <li class="has-submenu">
