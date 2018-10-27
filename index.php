@@ -151,13 +151,26 @@
             <div class="mb-2 card-body text-muted">
               <h3 class="text-info" id="total_miners">
                 <?php
-                  $miner01 = json_decode(file_get_contents("http://66.42.52.2:8080/api/stats"));
-                  $miner02 = json_decode(file_get_contents("http://66.42.50.61:8080/api/stats"));
-                  $totalminers  = $miner01->minersTotal + $miner02->minersTotal;
-                  echo $totalminers;
+                  $poolURL = array('http://66.42.50.61:8080', 'http://66.42.52.2:8080');
+                  $totalMiners = $totalWorker = 0;
+
+                  foreach ($poolURL as $a => $b) {
+                    $loginMiner = $minerStats = array('');
+                    $minerStats = json_decode(file_get_contents("$b/api/miners"),true);
+                    $totalMiners += $minerStats['minersTotal'];
+
+                    $loginMiner = $minerStats['miners'];
+                    $totalPoolWorker = 0;
+                    foreach($loginMiner as $k=>$v) {
+                      $miner = json_decode(file_get_contents("$b/api/accounts/$k"),true);
+                      $totalPoolWorker += $miner['workersOnline'];
+                    };
+                    $totalWorker += $totalPoolWorker;
+                  };
+                  echo $totalMiners." / ".$totalWorker;
                 ?>
               </h3>
-              Pool Miners
+              Pool Miners / Workers
             </div>
           </div>
         </div>
